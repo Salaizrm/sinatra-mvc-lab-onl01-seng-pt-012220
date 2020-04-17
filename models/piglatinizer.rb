@@ -12,7 +12,7 @@ class PigLatinizer
     end
   end
 
-  def piglatinize_helper(phrase)
+  def to_piglatin(phrase)
     array = phrase.split(" ")
     @user_phrase = array.map {|word| piglatinize(word)}.join(" ")
   end
