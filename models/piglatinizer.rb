@@ -15,14 +15,12 @@ class PigLatinizer
     else
       consonants = []
       consonants << word[0]
-    @user_phrase.each do |word1|
-      ["a", "e", "i", "o", "u"].include?(word1[1]) == false
+    if ["a", "e", "i", "o", "u"].include?(word[1]) == false
       consonants << word[1]
-    end
-    @user_phrase.each do |word2|
-      ["a", "e", "i", "o", "u"].include?(word2[2]) == false
+    if ["a", "e", "i", "o", "u"].include?(word[2]) == false
       consonants << word[2]
-    end
+        end
+      end
       "#{word[consonants.length..-1] + consonants.join + "ay"}"
     end
   end
