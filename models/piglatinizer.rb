@@ -5,7 +5,7 @@ class PigLatinizer
 
   end
 
-  def phrase_splitter
+  def word_splitter(word)
   end
 
 end
