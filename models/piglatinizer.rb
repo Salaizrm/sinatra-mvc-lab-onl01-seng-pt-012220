@@ -2,8 +2,8 @@ class PigLatinizer
 
   attr_accessor :user_phrase
 
-  def piglatinize(str)
-    a = str.split(" ")
+  def piglatinize(phrase)
+    a = phrase.split(" ")
     b = a.map {|word| piglatinize_word(word)}
     b.join(" ")
   end
