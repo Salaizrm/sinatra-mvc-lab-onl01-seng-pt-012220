@@ -8,7 +8,7 @@ class PigLatinizer
     b.join(" ")
   end
 
-  def to_piglatin(phrase)
+  def to_piglatin(word)
       first_letter = word[0].downcase
     if ["a", "e", "i", "o", "u"].include?(first_letter)
       "#{word}way"
