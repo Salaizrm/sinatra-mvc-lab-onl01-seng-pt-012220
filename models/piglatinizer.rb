@@ -1,7 +1,11 @@
 class PigLatinizer
 
-  def piglatinize
+  def piglatinize(phrase)
 
+
+  end
+
+  def phrase_splitter
   end
 
 end
