@@ -20,5 +20,7 @@ class PigLatinizer
         consonants << word[2]
       end
     end
+  end
+end
 
 end
