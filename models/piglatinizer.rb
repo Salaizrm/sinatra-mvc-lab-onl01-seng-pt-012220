@@ -1,27 +1,32 @@
 class PigLatinizer
 
+  attr_accessor :user_phrase
+
   def piglatinize(word)
-    return word if %w[and an in].include?(word) #one syllable exceptions
-    letters = word.split("")
-    letters.keep_if {|letter| letter != "."}
-    if letters.size > 1
-      until vowel?(letters[0])
-        letters << letters.shift
-      end
-      letters  << "ay"
+    if word.downcase.index(/[aeiou]/) == 0
+      word + "way"
+    else
+      vowel_index = word.index(/[aeiou]/)
+      front_end = word.slice!(0..vowel_index-1)
+      word + front_end +"ay"
     end
-    letters.join
   end
 
-  def to_pig_latin(text)
-    words = text.split(" ")
-    words.map! {|word| piglatinize(word)}
-    words.join(" ")
-  end
+  def to_piglatin(str)
+  alpha = ('a'..'z').to_a
+  vowels = %w[a e i o u]
+  consonants = alpha - vowels
 
-  def vowel?(letter)
-    letter.downcase
-    letter == "o" || letter == "e" || letter == "a" || letter == "i" || letter == "u"
+  if vowels.include?(str[0])
+    str + 'ay'
+  elsif consonants.include?(str[0]) && consonants.include?(str[1])
+    str[2..-1] + str[0..1] + 'ay'
+  elsif consonants.include?(str[0])
+    str[1..-1] + str[0] + 'ay'
+  else
+    str
   end
+end
 
-end 
+
+end
