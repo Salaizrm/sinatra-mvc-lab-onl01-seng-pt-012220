@@ -1,5 +1,7 @@
 class PigLatinizer
 
+  attr_accessor :user_phrase
+
   def piglatinize(phrase)
     a = phrase.split(" ")
         b = a.map {|word| word_splitter(word)}
@@ -18,6 +20,7 @@ class PigLatinizer
         consonants << word[2]
       end
     end
+    {word[consonants.length..-1] + consonants.join + "ay"}
   end
 
 end
