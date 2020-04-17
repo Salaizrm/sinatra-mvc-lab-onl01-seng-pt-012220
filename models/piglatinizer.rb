@@ -25,4 +25,3 @@ class PigLatinizer
   end
 
 end
- 1  views/piglatinize.erb 
