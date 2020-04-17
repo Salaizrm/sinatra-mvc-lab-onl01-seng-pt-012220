@@ -15,7 +15,9 @@ class PigLatinizer
     else
       consonants = []
       consonants << word[0]
-    if ["a", "e", "i", "o", "u"].include?(word[1]) == false
+    word.each do |word1|
+      ["a", "e", "i", "o", "u"].include?(word1[1]) == false
+    end
       consonants << word[1]
     if ["a", "e", "i", "o", "u"].include?(word[2]) == false
       consonants << word[2]
