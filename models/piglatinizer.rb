@@ -3,9 +3,13 @@ class PigLatinizer
   attr_accessor :user_phrase
 
   def piglatinize(phrase)
-    a = phrase.split(" ")
-        b = a.map {|word| word_splitter(word)}
-        b.join(" ")
+    if word.downcase.index(/[aeiou]/) == 0
+      word + "way"
+    else
+      vowel_index = word.index(/[aeiou]/)
+      front_end = word.slice!(0..vowel_index-1)
+      word + front_end +"ay"
+    end
   end
 
   def word_splitter(word)
