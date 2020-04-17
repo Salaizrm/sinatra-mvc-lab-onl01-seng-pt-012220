@@ -14,7 +14,7 @@ class PigLatinizer
       "#{word}way"
     else
       consonants = []
-      consonants << word[0]
+      consonants << word[0..3]
     if ["a", "e", "i", "o", "u"].include?(word[1]) == false
       consonants << word[1]
     if ["a", "e", "i", "o", "u"].include?(word[2]) == false
