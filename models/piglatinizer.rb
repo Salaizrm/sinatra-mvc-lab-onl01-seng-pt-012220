@@ -12,7 +12,7 @@ class PigLatinizer
     end
   end
 
-  def to_piglatin(str)
+  def to_piglatin(phrase)
 
   end
 
