@@ -17,12 +17,12 @@ class PigLatinizer
       consonants << word[0]
     word.each do |word1|
       ["a", "e", "i", "o", "u"].include?(word1[1]) == false
-    end
       consonants << word[1]
-    if ["a", "e", "i", "o", "u"].include?(word[2]) == false
+    end
+    word.each do |word2|
+      ["a", "e", "i", "o", "u"].include?(word2[2]) == false
       consonants << word[2]
-        end
-      end
+    end
       "#{word[consonants.length..-1] + consonants.join + "ay"}"
     end
   end
